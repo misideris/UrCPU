@@ -1,0 +1,29 @@
+$date
+	Fri Mar 22 12:17:39 2024
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1ps
+$end
+$scope module LDD_testbench $end
+$var wire 20 ! destination_register [19:0] $end
+$var reg 20 " origin_address [19:0] $end
+$scope module uut $end
+$var wire 20 # Ro [19:0] $end
+$var reg 20 $ Rd [19:0] $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+$comment Show the parameter values. $end
+$dumpall
+$end
+#0
+$dumpvars
+bx $
+b0 #
+b0 "
+bx !
+$end
+#110000

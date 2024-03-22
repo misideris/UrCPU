@@ -1,0 +1,73 @@
+$date
+	Mon Feb 26 20:28:49 2024
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1s
+$end
+$scope module testbench_subtractor $end
+$var wire 20 ! Diff [19:0] $end
+$var wire 1 " Bout $end
+$var reg 20 # A [19:0] $end
+$var reg 20 $ B [19:0] $end
+$var reg 1 % Bin $end
+$scope module uut $end
+$var wire 20 & A [19:0] $end
+$var wire 20 ' B [19:0] $end
+$var wire 1 % Bin $end
+$var reg 1 " Bout $end
+$var reg 20 ( Diff [19:0] $end
+$scope begin subtractor_logic $end
+$var reg 1 ) borrow $end
+$var integer 32 * i [31:0] $end
+$upscope $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+$comment Show the parameter values. $end
+$dumpall
+$end
+#0
+$dumpvars
+bx *
+x)
+bx (
+bx '
+bx &
+x%
+bx $
+bx #
+x"
+bx !
+$end
+#10
+b10100 *
+0)
+0"
+b100 !
+b100 (
+0%
+b110 $
+b110 '
+b1011 #
+b1011 &
+#30
+b10100 *
+0)
+b1 !
+b1 (
+1%
+b110 #
+b110 &
+#50
+b10100 *
+b0 !
+b0 (
+0%
+b1111 $
+b1111 '
+b1111 #
+b1111 &
+#60

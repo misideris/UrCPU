@@ -1,0 +1,31 @@
+$date
+	Wed Mar 20 12:31:42 2024
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1ps
+$end
+$scope module DEC_testbench $end
+$var wire 20 ! decremented_output [19:0] $end
+$var parameter 32 " CLK_PERIOD $end
+$var reg 20 # data_input [19:0] $end
+$scope module uut $end
+$var wire 20 $ data_input [19:0] $end
+$var reg 20 % decremented_output [19:0] $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+$comment Show the parameter values. $end
+$dumpall
+b1010 "
+$end
+#0
+$dumpvars
+b1111111111111111 %
+b10000000000000000 $
+b10000000000000000 #
+b1111111111111111 !
+$end
+#110000

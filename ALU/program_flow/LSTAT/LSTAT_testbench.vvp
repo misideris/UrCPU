@@ -1,0 +1,60 @@
+#! /opt/homebrew/Cellar/icarus-verilog/12.0/bin/vvp
+:ivl_version "12.0 (stable)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision - 12;
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/12.0/lib/ivl/system.vpi";
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/12.0/lib/ivl/vhdl_sys.vpi";
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/12.0/lib/ivl/vhdl_textio.vpi";
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/12.0/lib/ivl/v2005_math.vpi";
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/12.0/lib/ivl/va_math.vpi";
+S_0x13a7054d0 .scope module, "LSTAT_testbench" "LSTAT_testbench" 2 3;
+ .timescale -9 -12;
+P_0x13a705f80 .param/l "CLK_PERIOD" 0 2 6, +C4<00000000000000000000000000001010>;
+v0x13a71a820_0 .var "clk", 0 0;
+v0x13a71a8c0_0 .net "data_out", 19 0, v0x13a7072f0_0;  1 drivers
+v0x13a71a980_0 .var "status_register", 7 0;
+S_0x13a705640 .scope module, "uut" "LSTAT" 2 15, 3 1 0, S_0x13a7054d0;
+ .timescale -9 -12;
+    .port_info 0 /INPUT 8 "status_register";
+    .port_info 1 /OUTPUT 20 "data_out";
+v0x13a7072f0_0 .var "data_out", 19 0;
+v0x13a71a760_0 .net "status_register", 7 0, v0x13a71a980_0;  1 drivers
+E_0x13a707c30 .event anyedge, v0x13a71a760_0;
+    .scope S_0x13a705640;
+T_0 ;
+    %wait E_0x13a707c30;
+    %pushi/vec4 0, 0, 8;
+    %load/vec4 v0x13a71a760_0;
+    %concat/vec4; draw_concat_vec4
+    %pad/u 20;
+    %store/vec4 v0x13a7072f0_0, 0, 20;
+    %jmp T_0;
+    .thread T_0, $push;
+    .scope S_0x13a7054d0;
+T_1 ;
+    %delay 5000, 0;
+    %load/vec4 v0x13a71a820_0;
+    %inv;
+    %store/vec4 v0x13a71a820_0, 0, 1;
+    %jmp T_1;
+    .thread T_1;
+    .scope S_0x13a7054d0;
+T_2 ;
+    %vpi_call 2 25 "$dumpfile", "LSTAT_testbench.vcd" {0 0 0};
+    %vpi_call 2 26 "$dumpvars", 32'sb00000000000000000000000000000000, S_0x13a7054d0 {0 0 0};
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x13a71a820_0, 0, 1;
+    %pushi/vec4 255, 0, 8;
+    %store/vec4 v0x13a71a980_0, 0, 8;
+    %delay 10000, 0;
+    %vpi_call 2 35 "$display", "Time %0t: Initial status register value = %h", $time, v0x13a71a980_0 {0 0 0};
+    %delay 100000, 0;
+    %vpi_call 2 41 "$finish" {0 0 0};
+    %end;
+    .thread T_2;
+# The file index is used to find the file name in the following table.
+:file_names 4;
+    "N/A";
+    "<interactive>";
+    "LSTAT_testbench.v";
+    "LSTAT.v";

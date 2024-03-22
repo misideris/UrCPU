@@ -1,0 +1,40 @@
+$date
+	Wed Mar 20 12:52:55 2024
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1ps
+$end
+$scope module XSTAT_testbench $end
+$var wire 20 ! result [19:0] $end
+$var reg 20 " current_register [19:0] $end
+$var reg 20 # status_register [19:0] $end
+$var reg 1 $ trap_mode $end
+$scope module uut $end
+$var wire 20 % current_register [19:0] $end
+$var wire 20 & status_register [19:0] $end
+$var wire 1 $ trap_mode $end
+$var reg 20 ' result [19:0] $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+$comment Show the parameter values. $end
+$dumpall
+$end
+#0
+$dumpvars
+b0 '
+b0 &
+b10101011110011011110 %
+0$
+b0 #
+b10101011110011011110 "
+b0 !
+$end
+#110000
+b10101011110011011110 !
+b10101011110011011110 '
+1$
+#210000

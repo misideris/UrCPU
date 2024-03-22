@@ -1,0 +1,153 @@
+$date
+	Fri Mar 22 11:27:34 2024
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1ns
+$end
+$scope module IncrementRegister_tb $end
+$var wire 20 ! MEM_Correct_Reg [19:0] $end
+$var wire 20 " MEM_Acc_Reg [19:0] $end
+$var wire 20 # Instruc_Reg [19:0] $end
+$var parameter 32 $ CLK_Period $end
+$var reg 1 % Instruc_Count_Ex $end
+$var reg 1 & MEM_Acc_Ex $end
+$var reg 1 ' MEM_Correct_Ex $end
+$var reg 1 ( clk $end
+$var reg 1 ) reset $end
+$scope module DUT $end
+$var wire 1 % Instruc_Count_Ex $end
+$var wire 1 & MEM_Acc_Ex $end
+$var wire 1 ' MEM_Correct_Ex $end
+$var wire 1 ( clk $end
+$var wire 1 ) reset $end
+$var reg 20 * Instruc_Reg [19:0] $end
+$var reg 20 + MEM_Acc_Reg [19:0] $end
+$var reg 20 , MEM_Correct_Reg [19:0] $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+$comment Show the parameter values. $end
+$dumpall
+b1010 $
+$end
+#0
+$dumpvars
+b0 ,
+b0 +
+b0 *
+1)
+0(
+0'
+1&
+1%
+b0 #
+b0 "
+b0 !
+$end
+#5
+1(
+#10
+0(
+#15
+1(
+#20
+0(
+#25
+1(
+#30
+0(
+#35
+1(
+#40
+0(
+#45
+1(
+#50
+0(
+0)
+#55
+b1 "
+b1 +
+b1 #
+b1 *
+1(
+#60
+0(
+#65
+b10 "
+b10 +
+b10 #
+b10 *
+1(
+#70
+0(
+#75
+b11 "
+b11 +
+b11 #
+b11 *
+1(
+#80
+0(
+#85
+b100 "
+b100 +
+b100 #
+b100 *
+1(
+#90
+0(
+1'
+#95
+b1 !
+b1 ,
+b101 "
+b101 +
+b101 #
+b101 *
+1(
+#100
+0(
+#105
+b10 !
+b10 ,
+b110 "
+b110 +
+b110 #
+b110 *
+1(
+#110
+0(
+#115
+b11 !
+b11 ,
+b111 "
+b111 +
+b111 #
+b111 *
+1(
+#120
+0(
+#125
+b100 !
+b100 ,
+b1000 "
+b1000 +
+b1000 #
+b1000 *
+1(
+#130
+0(
+#135
+b101 !
+b101 ,
+b1001 "
+b1001 +
+b1001 #
+b1001 *
+1(
+#140
+0(

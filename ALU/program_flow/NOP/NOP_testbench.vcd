@@ -1,0 +1,40 @@
+$date
+	Wed Mar 20 12:45:28 2024
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1ps
+$end
+$scope module NOP_testbench $end
+$var wire 20 ! result [19:0] $end
+$var reg 20 " data [19:0] $end
+$var reg 1 # reset $end
+$scope module uut $end
+$var wire 20 $ data [19:0] $end
+$var reg 20 % result [19:0] $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+$comment Show the parameter values. $end
+$dumpall
+$end
+#0
+$dumpvars
+b10010001101000101 %
+b10010001101000101 $
+0#
+b10010001101000101 "
+b10010001101000101 !
+$end
+#10000
+1#
+#20000
+0#
+#120000
+b10101011110011011110 !
+b10101011110011011110 %
+b10101011110011011110 "
+b10101011110011011110 $
+#220000

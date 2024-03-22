@@ -1,0 +1,58 @@
+#! /opt/homebrew/Cellar/icarus-verilog/12.0/bin/vvp
+:ivl_version "12.0 (stable)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/12.0/lib/ivl/system.vpi";
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/12.0/lib/ivl/vhdl_sys.vpi";
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/12.0/lib/ivl/vhdl_textio.vpi";
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/12.0/lib/ivl/v2005_math.vpi";
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/12.0/lib/ivl/va_math.vpi";
+S_0x12ce08980 .scope module, "TRAP_testbench" "TRAP_testbench" 2 1;
+ .timescale 0 0;
+v0x12ce1c850_0 .var "first", 0 0;
+v0x12ce1c900_0 .net "trap_mode", 0 0, v0x12ce1c7a0_0;  1 drivers
+S_0x12ce07870 .scope module, "uut" "TRAP" 2 8, 3 1 0, S_0x12ce08980;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "first";
+    .port_info 1 /OUTPUT 1 "trap_mode";
+v0x12ce08af0_0 .net "first", 0 0, v0x12ce1c850_0;  1 drivers
+v0x12ce1c7a0_0 .var "trap_mode", 0 0;
+E_0x12ce07d00 .event posedge, v0x12ce08af0_0;
+    .scope S_0x12ce07870;
+T_0 ;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x12ce1c7a0_0, 0, 1;
+    %end;
+    .thread T_0;
+    .scope S_0x12ce07870;
+T_1 ;
+    %wait E_0x12ce07d00;
+    %pushi/vec4 1, 0, 1;
+    %assign/vec4 v0x12ce1c7a0_0, 0;
+    %jmp T_1;
+    .thread T_1;
+    .scope S_0x12ce08980;
+T_2 ;
+    %vpi_call 2 14 "$dumpfile", "TRAP_testbench.vcd" {0 0 0};
+    %vpi_call 2 15 "$dumpvars", 32'sb00000000000000000000000000000000, S_0x12ce08980 {0 0 0};
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x12ce1c850_0, 0, 1;
+    %delay 10, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x12ce1c850_0, 0, 1;
+    %delay 100, 0;
+    %vpi_call 2 22 "$finish" {0 0 0};
+    %end;
+    .thread T_2;
+    .scope S_0x12ce08980;
+T_3 ;
+    %wait E_0x12ce07d00;
+    %vpi_call 2 27 "$display", "Time %0t: Trap mode flag = %b", $time, v0x12ce1c900_0 {0 0 0};
+    %jmp T_3;
+    .thread T_3;
+# The file index is used to find the file name in the following table.
+:file_names 4;
+    "N/A";
+    "<interactive>";
+    "TRAP_testbench.v";
+    "TRAP.v";

@@ -1,0 +1,29 @@
+$date
+	Wed Mar 20 15:03:58 2024
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1ps
+$end
+$scope module MRR_testbench $end
+$var wire 20 ! Rd [19:0] $end
+$var reg 20 " Ro [19:0] $end
+$scope module uut $end
+$var wire 20 # Ro [19:0] $end
+$var reg 20 $ Rd [19:0] $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+$comment Show the parameter values. $end
+$dumpall
+$end
+#0
+$dumpvars
+b10101010101010101010 $
+b10101010101010101010 #
+b10101010101010101010 "
+b10101010101010101010 !
+$end
+#110000

@@ -1,0 +1,67 @@
+#! /opt/homebrew/Cellar/icarus-verilog/12.0/bin/vvp
+:ivl_version "12.0 (stable)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision - 12;
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/12.0/lib/ivl/system.vpi";
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/12.0/lib/ivl/vhdl_sys.vpi";
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/12.0/lib/ivl/vhdl_textio.vpi";
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/12.0/lib/ivl/v2005_math.vpi";
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/12.0/lib/ivl/va_math.vpi";
+S_0x15b005a30 .scope module, "JMPS_testbench" "JMPS_testbench" 2 3;
+ .timescale -9 -12;
+v0x15b01b460_0 .var "jmp_address", 19 0;
+v0x15b01b510_0 .net "new_pc", 19 0, v0x15b01b1f0_0;  1 drivers
+v0x15b01b5c0_0 .var "pc", 19 0;
+v0x15b01b690_0 .var "sign_flag", 0 0;
+S_0x15b00b260 .scope module, "uut" "JMPS" 2 12, 3 1 0, S_0x15b005a30;
+ .timescale 0 0;
+    .port_info 0 /INPUT 20 "pc";
+    .port_info 1 /INPUT 1 "sign_flag";
+    .port_info 2 /INPUT 20 "jmp_address";
+    .port_info 3 /OUTPUT 20 "new_pc";
+v0x15b00b3d0_0 .net "jmp_address", 19 0, v0x15b01b460_0;  1 drivers
+v0x15b01b1f0_0 .var "new_pc", 19 0;
+v0x15b01b2a0_0 .net "pc", 19 0, v0x15b01b5c0_0;  1 drivers
+v0x15b01b360_0 .net "sign_flag", 0 0, v0x15b01b690_0;  1 drivers
+E_0x15b006050 .event anyedge, v0x15b01b360_0, v0x15b00b3d0_0, v0x15b01b2a0_0;
+    .scope S_0x15b00b260;
+T_0 ;
+    %wait E_0x15b006050;
+    %load/vec4 v0x15b01b360_0;
+    %flag_set/vec4 8;
+    %jmp/0xz  T_0.0, 8;
+    %load/vec4 v0x15b00b3d0_0;
+    %store/vec4 v0x15b01b1f0_0, 0, 20;
+    %jmp T_0.1;
+T_0.0 ;
+    %load/vec4 v0x15b01b2a0_0;
+    %store/vec4 v0x15b01b1f0_0, 0, 20;
+T_0.1 ;
+    %jmp T_0;
+    .thread T_0, $push;
+    .scope S_0x15b005a30;
+T_1 ;
+    %vpi_call 2 21 "$dumpfile", "JMPS_testbench.vcd" {0 0 0};
+    %vpi_call 2 22 "$dumpvars", 32'sb00000000000000000000000000000000, S_0x15b005a30 {0 0 0};
+    %pushi/vec4 0, 0, 20;
+    %store/vec4 v0x15b01b5c0_0, 0, 20;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x15b01b690_0, 0, 1;
+    %pushi/vec4 703710, 0, 20;
+    %store/vec4 v0x15b01b460_0, 0, 20;
+    %delay 10000, 0;
+    %vpi_call 2 29 "$display", "Time %0t: Initial program counter = %h", $time, v0x15b01b5c0_0 {0 0 0};
+    %vpi_call 2 30 "$display", "Time %0t: Sign flag = %b", $time, v0x15b01b690_0 {0 0 0};
+    %delay 100000, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x15b01b690_0, 0, 1;
+    %vpi_call 2 35 "$display", "Time %0t: New program counter after JMPS operation = %h", $time, v0x15b01b510_0 {0 0 0};
+    %vpi_call 2 36 "$finish" {0 0 0};
+    %end;
+    .thread T_1;
+# The file index is used to find the file name in the following table.
+:file_names 4;
+    "N/A";
+    "<interactive>";
+    "JMPS_testbench.v";
+    "JMPS.v";

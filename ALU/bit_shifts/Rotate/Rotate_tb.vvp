@@ -1,0 +1,67 @@
+#! /opt/homebrew/Cellar/icarus-verilog/12.0/bin/vvp
+:ivl_version "12.0 (stable)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision - 9;
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/12.0/lib/ivl/system.vpi";
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/12.0/lib/ivl/vhdl_sys.vpi";
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/12.0/lib/ivl/vhdl_textio.vpi";
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/12.0/lib/ivl/v2005_math.vpi";
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/12.0/lib/ivl/va_math.vpi";
+S_0x12c0050f0 .scope module, "Rotate_tb" "Rotate_tb" 2 12;
+ .timescale -9 -9;
+v0x12c0161e0_0 .var "Data_L", 19 0;
+v0x12c0162d0_0 .var "Data_R", 19 0;
+v0x12c0163a0_0 .net "R_Left", 19 0, L_0x12c016700;  1 drivers
+v0x12c016470_0 .net "R_Right", 19 0, L_0x12c0169c0;  1 drivers
+S_0x12c005260 .scope module, "rotate" "Rotate" 2 18, 3 9 0, S_0x12c0050f0;
+ .timescale 0 0;
+    .port_info 0 /INPUT 20 "Data_L";
+    .port_info 1 /OUTPUT 20 "R_Left";
+    .port_info 2 /INPUT 20 "Data_R";
+    .port_info 3 /OUTPUT 20 "R_Right";
+v0x12c015eb0_0 .net "Data_L", 19 0, v0x12c0161e0_0;  1 drivers
+v0x12c015f70_0 .net "Data_R", 19 0, v0x12c0162d0_0;  1 drivers
+v0x12c016020_0 .net "R_Left", 19 0, L_0x12c016700;  alias, 1 drivers
+v0x12c0160f0_0 .net "R_Right", 19 0, L_0x12c0169c0;  alias, 1 drivers
+S_0x12c005490 .scope module, "left" "RL" 3 16, 3 28 0, S_0x12c005260;
+ .timescale 0 0;
+    .port_info 0 /INPUT 20 "Data_L";
+    .port_info 1 /OUTPUT 20 "R_Left";
+v0x12c0056a0_0 .net "Data_L", 19 0, v0x12c0161e0_0;  alias, 1 drivers
+v0x12c015760_0 .net "R_Left", 19 0, L_0x12c016700;  alias, 1 drivers
+v0x12c015810_0 .net *"_ivl_1", 18 0, L_0x12c016540;  1 drivers
+v0x12c0158d0_0 .net *"_ivl_3", 0 0, L_0x12c0165e0;  1 drivers
+L_0x12c016540 .part v0x12c0161e0_0, 0, 19;
+L_0x12c0165e0 .part v0x12c0161e0_0, 19, 1;
+L_0x12c016700 .concat [ 1 19 0 0], L_0x12c0165e0, L_0x12c016540;
+S_0x12c0159b0 .scope module, "right" "RR" 3 21, 3 36 0, S_0x12c005260;
+ .timescale 0 0;
+    .port_info 0 /INPUT 20 "Data_R";
+    .port_info 1 /OUTPUT 20 "R_Right";
+v0x12c015ba0_0 .net "Data_R", 19 0, v0x12c0162d0_0;  alias, 1 drivers
+v0x12c015c60_0 .net "R_Right", 19 0, L_0x12c0169c0;  alias, 1 drivers
+v0x12c015d10_0 .net *"_ivl_1", 0 0, L_0x12c0167e0;  1 drivers
+v0x12c015dd0_0 .net *"_ivl_3", 18 0, L_0x12c016880;  1 drivers
+L_0x12c0167e0 .part v0x12c0162d0_0, 0, 1;
+L_0x12c016880 .part v0x12c0162d0_0, 1, 19;
+L_0x12c0169c0 .concat [ 19 1 0 0], L_0x12c016880, L_0x12c0167e0;
+    .scope S_0x12c0050f0;
+T_0 ;
+    %vpi_call 2 26 "$dumpfile", "Rotate_tb.vcd" {0 0 0};
+    %vpi_call 2 27 "$dumpvars", 32'sb00000000000000000000000000000000, S_0x12c0050f0 {0 0 0};
+    %pushi/vec4 699050, 0, 20;
+    %store/vec4 v0x12c0161e0_0, 0, 20;
+    %pushi/vec4 699050, 0, 20;
+    %store/vec4 v0x12c0162d0_0, 0, 20;
+    %delay 10, 0;
+    %vpi_call 2 34 "$display", "Data_L: %b, R_Left: %b", v0x12c0161e0_0, v0x12c0163a0_0 {0 0 0};
+    %vpi_call 2 35 "$display", "Data_R: %b, R_Right: %b", v0x12c0162d0_0, v0x12c016470_0 {0 0 0};
+    %vpi_call 2 37 "$finish" {0 0 0};
+    %end;
+    .thread T_0;
+# The file index is used to find the file name in the following table.
+:file_names 4;
+    "N/A";
+    "<interactive>";
+    "Rotate_tb.v";
+    "Rotate.v";

@@ -1,0 +1,37 @@
+$date
+	Wed Mar 20 12:37:21 2024
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1ps
+$end
+$scope module JMP_testbench $end
+$var wire 20 ! new_pc [19:0] $end
+$var reg 20 " jmp_address [19:0] $end
+$var reg 20 # pc [19:0] $end
+$scope module uut $end
+$var wire 20 $ jmp_address [19:0] $end
+$var wire 20 % pc [19:0] $end
+$var reg 20 & new_pc [19:0] $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+$comment Show the parameter values. $end
+$dumpall
+$end
+#0
+$dumpvars
+b10101011110011011110 &
+b0 %
+b10101011110011011110 $
+b0 #
+b10101011110011011110 "
+b10101011110011011110 !
+$end
+#110000
+b11111110110111001011 !
+b11111110110111001011 &
+b11111110110111001011 "
+b11111110110111001011 $

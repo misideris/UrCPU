@@ -1,0 +1,29 @@
+$date
+	Wed Mar 20 14:50:25 2024
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1ps
+$end
+$scope module NOT_testbench $end
+$var wire 20 ! output_register [19:0] $end
+$var reg 20 " input_register [19:0] $end
+$scope module uut $end
+$var wire 20 # input_register [19:0] $end
+$var reg 20 $ output_register [19:0] $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+$comment Show the parameter values. $end
+$dumpall
+$end
+#0
+$dumpvars
+b11101010110101010101 $
+b10101001010101010 #
+b10101001010101010 "
+b11101010110101010101 !
+$end
+#110000

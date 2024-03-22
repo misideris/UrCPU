@@ -1,0 +1,49 @@
+$date
+	Fri Mar 22 11:24:56 2024
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1ns
+$end
+$scope module Rotate_tb $end
+$var wire 20 ! R_Right [19:0] $end
+$var wire 20 " R_Left [19:0] $end
+$var reg 20 # Data_L [19:0] $end
+$var reg 20 $ Data_R [19:0] $end
+$scope module rotate $end
+$var wire 20 % Data_L [19:0] $end
+$var wire 20 & Data_R [19:0] $end
+$var wire 20 ' R_Right [19:0] $end
+$var wire 20 ( R_Left [19:0] $end
+$scope module left $end
+$var wire 20 ) Data_L [19:0] $end
+$var wire 20 * R_Left [19:0] $end
+$upscope $end
+$scope module right $end
+$var wire 20 + Data_R [19:0] $end
+$var wire 20 , R_Right [19:0] $end
+$upscope $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+$comment Show the parameter values. $end
+$dumpall
+$end
+#0
+$dumpvars
+b1010101010101010101 ,
+b10101010101010101010 +
+b1010101010101010101 *
+b10101010101010101010 )
+b1010101010101010101 (
+b1010101010101010101 '
+b10101010101010101010 &
+b10101010101010101010 %
+b10101010101010101010 $
+b10101010101010101010 #
+b1010101010101010101 "
+b1010101010101010101 !
+$end
+#10

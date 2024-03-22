@@ -1,0 +1,30 @@
+$date
+	Wed Mar 20 12:48:20 2024
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1s
+$end
+$scope module TRAP_testbench $end
+$var wire 1 ! trap_mode $end
+$var reg 1 " first $end
+$scope module uut $end
+$var wire 1 " first $end
+$var reg 1 ! trap_mode $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+$comment Show the parameter values. $end
+$dumpall
+$end
+#0
+$dumpvars
+0"
+0!
+$end
+#10
+1!
+1"
+#110

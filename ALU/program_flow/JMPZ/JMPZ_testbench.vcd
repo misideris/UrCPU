@@ -1,0 +1,86 @@
+$date
+	Mon Mar 18 20:21:02 2024
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1ps
+$end
+$scope module JMPZ_testbench $end
+$var wire 20 ! new_pc [19:0] $end
+$var parameter 32 " CLK_PERIOD $end
+$var reg 1 # clk $end
+$var reg 20 $ jmp_address [19:0] $end
+$var reg 20 % pc [19:0] $end
+$var reg 1 & zero_flag $end
+$scope module uut $end
+$var wire 20 ' jmp_address [19:0] $end
+$var wire 20 ( pc [19:0] $end
+$var wire 1 & zero_flag $end
+$var reg 20 ) new_pc [19:0] $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+$comment Show the parameter values. $end
+$dumpall
+b1010 "
+$end
+#0
+$dumpvars
+b10101011110011011110 )
+b0 (
+b10101011110011011110 '
+1&
+b0 %
+b10101011110011011110 $
+0#
+b10101011110011011110 !
+$end
+#5000
+1#
+#10000
+0#
+#15000
+1#
+#20000
+0#
+#25000
+1#
+#30000
+0#
+#35000
+1#
+#40000
+0#
+#45000
+1#
+#50000
+0#
+#55000
+1#
+#60000
+0#
+#65000
+1#
+#70000
+0#
+#75000
+1#
+#80000
+0#
+#85000
+1#
+#90000
+0#
+#95000
+1#
+#100000
+0#
+#105000
+1#
+#110000
+b0 !
+b0 )
+0#
+0&

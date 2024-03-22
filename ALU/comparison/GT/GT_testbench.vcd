@@ -1,0 +1,40 @@
+$date
+	Wed Mar 20 09:20:10 2024
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1ps
+$end
+$scope module GT_testbench $end
+$var wire 1 ! sign_flag $end
+$var parameter 32 " CLK_PERIOD $end
+$var reg 20 # register_A [19:0] $end
+$var reg 20 $ register_B [19:0] $end
+$scope module uut $end
+$var wire 20 % register_A [19:0] $end
+$var wire 20 & register_B [19:0] $end
+$var reg 1 ! sign_flag $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+$comment Show the parameter values. $end
+$dumpall
+b1010 "
+$end
+#0
+$dumpvars
+b1010100001100100001 &
+b10101011110011011110 %
+b1010100001100100001 $
+b10101011110011011110 #
+1!
+$end
+#110000
+0!
+b10101011110011011110 $
+b10101011110011011110 &
+b1010100001100100001 #
+b1010100001100100001 %
+#220000

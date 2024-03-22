@@ -1,0 +1,76 @@
+#! /opt/homebrew/Cellar/icarus-verilog/12.0/bin/vvp
+:ivl_version "12.0 (stable)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/12.0/lib/ivl/system.vpi";
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/12.0/lib/ivl/vhdl_sys.vpi";
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/12.0/lib/ivl/vhdl_textio.vpi";
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/12.0/lib/ivl/v2005_math.vpi";
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/12.0/lib/ivl/va_math.vpi";
+S_0x13fe046b0 .scope module, "testbench_swap" "testbench_swap" 2 4;
+ .timescale 0 0;
+v0x13fe14ed0_0 .var "a", 19 0;
+v0x13fe14f80_0 .net "a_swapped", 19 0, v0x13fe14b80_0;  1 drivers
+v0x13fe15030_0 .var "b", 19 0;
+v0x13fe15100_0 .net "b_swapped", 19 0, v0x13fe14cf0_0;  1 drivers
+S_0x13fe04830 .scope module, "x0" "swapped" 2 15, 3 1 0, S_0x13fe046b0;
+ .timescale 0 0;
+    .port_info 0 /INPUT 20 "a";
+    .port_info 1 /INPUT 20 "b";
+    .port_info 2 /OUTPUT 20 "a_swapped";
+    .port_info 3 /OUTPUT 20 "b_swapped";
+v0x13fe04ac0_0 .net "a", 19 0, v0x13fe14ed0_0;  1 drivers
+v0x13fe14b80_0 .var "a_swapped", 19 0;
+v0x13fe14c30_0 .net "b", 19 0, v0x13fe15030_0;  1 drivers
+v0x13fe14cf0_0 .var "b_swapped", 19 0;
+v0x13fe14da0_0 .var/i "i", 31 0;
+E_0x13fe04a60 .event anyedge, v0x13fe14c30_0, v0x13fe04ac0_0;
+    .scope S_0x13fe04830;
+T_0 ;
+    %wait E_0x13fe04a60;
+    %pushi/vec4 0, 0, 32;
+    %store/vec4 v0x13fe14da0_0, 0, 32;
+T_0.0 ;
+    %load/vec4 v0x13fe14da0_0;
+    %cmpi/s 20, 0, 32;
+    %jmp/0xz T_0.1, 5;
+    %load/vec4 v0x13fe14c30_0;
+    %load/vec4 v0x13fe14da0_0;
+    %part/s 1;
+    %ix/load 5, 0, 0;
+    %ix/getv/s 4, v0x13fe14da0_0;
+    %assign/vec4/off/d v0x13fe14b80_0, 4, 5;
+    %load/vec4 v0x13fe04ac0_0;
+    %load/vec4 v0x13fe14da0_0;
+    %part/s 1;
+    %ix/load 5, 0, 0;
+    %ix/getv/s 4, v0x13fe14da0_0;
+    %assign/vec4/off/d v0x13fe14cf0_0, 4, 5;
+    %load/vec4 v0x13fe14da0_0;
+    %addi 1, 0, 32;
+    %store/vec4 v0x13fe14da0_0, 0, 32;
+    %jmp T_0.0;
+T_0.1 ;
+    %jmp T_0;
+    .thread T_0, $push;
+    .scope S_0x13fe046b0;
+T_1 ;
+    %vpi_call 2 24 "$dumpfile", "testbench_swap.vcd" {0 0 0};
+    %vpi_call 2 26 "$dumpvars", 32'sb00000000000000000000000000000000, S_0x13fe04830 {0 0 0};
+    %vpi_call 2 27 "$monitor", "a: %b, b: %b, a_swapped: %b, b_swapped: %b", v0x13fe14ed0_0, v0x13fe15030_0, v0x13fe14f80_0, v0x13fe15100_0 {0 0 0};
+    %pushi/vec4 699050, 0, 20;
+    %store/vec4 v0x13fe14ed0_0, 0, 20;
+    %pushi/vec4 349525, 0, 20;
+    %store/vec4 v0x13fe15030_0, 0, 20;
+    %vpi_call 2 32 "$display", "Original values: a=%b, b=%b", v0x13fe14ed0_0, v0x13fe15030_0 {0 0 0};
+    %delay 10, 0;
+    %vpi_call 2 34 "$display", "Swapped values: a_swapped=%b, b_swapped=%b", v0x13fe14f80_0, v0x13fe15100_0 {0 0 0};
+    %vpi_call 2 35 "$finish" {0 0 0};
+    %end;
+    .thread T_1;
+# The file index is used to find the file name in the following table.
+:file_names 4;
+    "N/A";
+    "<interactive>";
+    "testbench_swap.v";
+    "./swap.v";

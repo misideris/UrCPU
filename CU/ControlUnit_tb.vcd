@@ -1,0 +1,113 @@
+$date
+	Fri Mar 22 11:13:11 2024
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1ns
+$end
+$scope module ControlUnit_tb $end
+$var wire 1 ! Write_Back $end
+$var wire 1 " MEM_Acc $end
+$var wire 1 # Instr_Fetch $end
+$var wire 1 $ Instr_Exec $end
+$var wire 1 % Instr_Decode $end
+$var wire 1 & Halt $end
+$var parameter 32 ' CLK_Period $end
+$var reg 2 ( Instr_Stage [1:0] $end
+$var reg 1 ) clk $end
+$var reg 4 * opCode [3:0] $end
+$scope module dut $end
+$var wire 2 + Instr_Stage [1:0] $end
+$var wire 4 , opCode [3:0] $end
+$var parameter 4 - ALU_Code $end
+$var parameter 2 . Decode $end
+$var parameter 2 / Execute $end
+$var parameter 2 0 Fetch $end
+$var parameter 4 1 Fetch_Code $end
+$var parameter 4 2 Halt_Code $end
+$var parameter 4 3 Jump_Code $end
+$var parameter 4 4 Load_Code $end
+$var parameter 2 5 MEM $end
+$var parameter 4 6 Store_Code $end
+$var reg 1 & Halt $end
+$var reg 1 % Instr_Decode $end
+$var reg 1 $ Instr_Exec $end
+$var reg 1 # Instr_Fetch $end
+$var reg 1 " MEM_Acc $end
+$var reg 1 ! Write_Back $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+$comment Show the parameter values. $end
+$dumpall
+b0 6
+b11 5
+b0 4
+b100 3
+b1111 2
+b0 1
+b0 0
+b10 /
+b1 .
+b110 -
+b1010 '
+$end
+#0
+$dumpvars
+b0 ,
+b0 +
+b0 *
+0)
+b0 (
+0&
+0%
+0$
+1#
+0"
+0!
+$end
+#5
+1)
+#10
+0)
+#15
+1)
+#20
+0)
+#25
+1)
+#30
+0)
+#35
+1)
+#40
+0)
+#45
+1)
+#50
+0)
+#55
+1)
+#60
+0#
+0)
+b1 (
+b1 +
+#65
+1)
+#70
+0)
+b10 (
+b10 +
+#75
+1)
+#80
+0)
+b11 (
+b11 +
+#85
+1)
+#90
+0)

@@ -1,0 +1,29 @@
+$date
+	Fri Mar 22 12:31:43 2024
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1ps
+$end
+$scope module STD_testbench $end
+$var wire 20 ! stored_data [19:0] $end
+$var reg 20 " Ro [19:0] $end
+$scope module uut $end
+$var wire 20 # Ro [19:0] $end
+$var reg 20 $ stored_data [19:0] $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+$comment Show the parameter values. $end
+$dumpall
+$end
+#0
+$dumpvars
+b10010001101000101 $
+b10010001101000101 #
+b10010001101000101 "
+b10010001101000101 !
+$end
+#110000
