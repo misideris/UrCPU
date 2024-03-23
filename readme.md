@@ -1,10 +1,10 @@
 Finish memory
 - LDD compiles not working
 
-
+-Note internal memory is in ALU folder
 
 - Remove include button in all files
-- add dumpfile to each thing.
+- add dumpfile to each file.
 
 - File named "register" refers to six general purpose, six pointer/segment registers
 
